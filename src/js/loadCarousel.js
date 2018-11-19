@@ -1,3 +1,27 @@
+// instantiate standard Siema for the hero section
+
+const mySiema = new Siema({
+  selector: ".siema",
+  duration: 200,
+  easing: "ease-out",
+  perPage: 1,
+  startIndex: 0,
+  draggable: false,
+  multipleDrag: false,
+  threshold: 20,
+  loop: true,
+  rtl: false,
+  onInit: () => {},
+  onChange: () => {}
+});
+
+// switch slide every two seconds
+setInterval(() => mySiema.next(), 2000);
+
+
+
+
+
 // extend a Siema class by two methods
 // addDots - to create a markup for dots
 // updateDots - to update classes on dots on change callback
@@ -75,7 +99,3 @@ const mySiemaWithDots = new SiemaWithDots({
 });
 
 setInterval(() => mySiemaWithDots.next(), 10000);
-
-// instantiate new extended Siema
-
-// setInterval(() => mySiema.next(), 2000);
