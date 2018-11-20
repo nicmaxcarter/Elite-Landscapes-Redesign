@@ -107,7 +107,7 @@ body {
 #slider {
   background: rgba(97, 166, 14, 0.75);
   height: 100px;
-  padding: 0px 30px;
+  padding: 0px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -212,13 +212,13 @@ body {
   background: var(--lt-green-hover);
 }
 
-#contact-btn-container {
+.lg-btn-container {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-#contact-btn {
+.rlg-btn {
   font-size: 20px;
   font-weight: 500;
   padding: 10px 30px;
@@ -235,24 +235,43 @@ body {
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 700;
+  cursor: default;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--lt-green),
+    var(--lt-green) 50%,
+    #000000 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
+.service-title:after {
+  content: "";
+  position: absolute;
+}
+
+.service-title:hover {
+  transition: all 0.9s cubic-bezie r(0, 0, 0.4, 1);
+  background-position: 0%;
 }
 
 p.service {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
+  cursor: default;
 }
 
-p.service.expand {
-  display: none;
-}
 
-.grow {
+/* .grow {
   transition: all 0.2s ease-in-out;
   cursor: default;
 }
 .grow:hover {
   transform: scale(1.1);
-}
+} */
 
 #services-container {
   margin-top: 50px;
@@ -309,6 +328,20 @@ p.service.expand {
   opacity: 0.7;
 }
 
+/* GALLERY */
+#gallery-section {
+  padding: 80px 20px;
+}
+.image-cell {
+  padding: 5px;
+}
+
+.img-container {
+  width: 100%;
+  padding-top: 75%;
+  background: #cccccc;
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   #logo-img {
@@ -327,6 +360,7 @@ p.service.expand {
     background: rgba(97, 166, 14, 0.75);
     width: 78%;
     height: 50px;
+    padding: 0px 20px;
   }
 
   .title {
@@ -339,15 +373,78 @@ p.service.expand {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
-  /* .title.elite {
-    margin-top: -25px;
-  } */
+  .siema-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .siema-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .siema {
+    width: 100%;
+    min-width: 350px;
+  }
+
+  .heading-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .heading-container.left {
+    flex-direction: column-reverse;
+  }
+
+  #about-section {
+    padding: 125px 25px;
+  }
+
+  .section-heading {
+    font-size: 40px;
+    margin: 0px 0px 10px 0px;
+  }
+  .section-heading.left {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .green-underline {
+    width: 100%;
+  }
+
+  #about-paragraph {
+    font-size: 1em;
+  }
 }
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
   #slider-container {
     margin-top: -75px;
+  }
+
+  .siema-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .siema-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 380px;
+    overflow: hidden;
+  }
+
+  .siema {
+    width: 400px;
+    min-width: 400px;
   }
 }
 
