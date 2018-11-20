@@ -162,7 +162,11 @@ body {
 }
 
 .grid-container.xl {
-  max-width: 1400px;
+  max-width: 90vw;
+}
+
+.siemaDots {
+  max-width: 90vw;
 }
 
 .heading-container {
@@ -264,7 +268,6 @@ p.service {
   cursor: default;
 }
 
-
 /* .grow {
   transition: all 0.2s ease-in-out;
   cursor: default;
@@ -287,6 +290,9 @@ p.service {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.testimonial-container {
 }
 
 .testimonial {
@@ -457,6 +463,9 @@ p.service {
   .testimonial.title {
     text-align: right;
     justify-content: flex-end;
+  }
+  .grid-container.xl {
+    max-width: 1400px;
   }
 }
 
