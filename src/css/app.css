@@ -56,7 +56,7 @@ body {
 }
 
 #hero-section {
-  height: 90vh;
+  height: 65vh;
   background: #ffffff;
   max-height: 1200px;
 }
@@ -99,7 +99,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  height: 90%;
+  height: 100%;
   width: 70%;
   max-width: 70%;
   align-self: center;
@@ -116,9 +116,9 @@ body {
 
 .title {
   color: #ffffff;
-  font-size: 85px;
+  font-size: 110px;
   font-style: normal !important;
-  line-height: 85px;
+  line-height: 110px;
   font-weight: 700;
   text-align: right;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -167,8 +167,6 @@ body {
 .grid-container.xl {
   max-width: 90vw;
 }
-
-
 
 .heading-container {
   width: 100%;
@@ -236,11 +234,13 @@ body {
 }
 
 .service-title {
+  display: inline-block;
   font-family: "Roboto Condensed", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 700;
   cursor: default;
+  color: #000000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(
@@ -249,24 +249,36 @@ body {
     var(--lt-green) 50%,
     #000000 50%
   );
+  transition: all .7s cubic-bezier(.7, 0, 0.15, 1);
   background-size: 200% 100%;
   background-position: 100%;
+
+  
+  transform: scale(1);
+
 }
 
-.service-title:after {
+/* .service-title:after {
   content: "";
   position: absolute;
+} */
+
+.service-container:hover .service-title{
+  transition: all .35s cubic-bezier(.7, 0, 0.15, 1);
+  background-position: 0%;
+  transform: scale(1.07);
 }
 
-.service-title:hover {
-  transition: all 0.9s cubic-bezie r(0, 0, 0.4, 1);
-  background-position: 0%;
+.service-container:hover p.service {
+  color: #000000;
 }
 
 p.service {
+  color: #555555;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   cursor: default;
+  transition: all .2s ease-in-out;
 }
 
 /* .grow {
@@ -320,14 +332,24 @@ p.service {
   text-align: left;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
   display: flex;
-  flex-direction: row;  
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.sub-title {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 300;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .testimonial.title h1 {
   font-weight: 700;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 60px;
+  line-height: 60px;
   margin: 0px;
   padding: 0px 0px;
 }
@@ -343,14 +365,6 @@ p.service {
   opacity: 0.85;
 }
 
-.firstname {
-  padding-left: 15px !important;
-}
-
-.lastname {
-  padding-left: 15px !important;
-}
-
 /* GALLERY */
 #gallery-section {
   padding: 80px 20px;
@@ -362,9 +376,26 @@ p.service {
 .img-container {
   width: 100%;
   background: #cccccc;
+  overflow: hidden;
+}
+
+a.image-link img {
+  transition: all 0.1s ease-in-out;
+}
+a.image-link img:hover {
+  transform: scale(1.1);
 }
 
 /* CONTACT SECTION */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0px #cacaca !important;
+
+}
 
 #contact-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -378,7 +409,6 @@ p.service {
   align-items: center;
   padding: 20px 10px;
 }
-
 
 .floated-label-wrapper {
   position: relative;
@@ -405,9 +435,9 @@ p.service {
   z-index: -1;
 }
 
-.floated-label-wrapper label input[type=text],
-.floated-label-wrapper label input[type=email],
-.floated-label-wrapper label textarea[type=text] {
+.floated-label-wrapper label input[type="text"],
+.floated-label-wrapper label input[type="email"],
+.floated-label-wrapper label textarea[type="text"] {
   border-radius: 4px;
   font-size: 1.75em;
   padding: 0.5em;
@@ -428,16 +458,18 @@ p.service {
   text-align: center;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-  text-align: center;  
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-  text-align: center;  
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
 }
 
-:-ms-input-placeholder {  
-  text-align: center; 
+:-ms-input-placeholder {
+  text-align: center;
 }
 
 .submit-btn {
@@ -470,14 +502,18 @@ p.service {
 .footer-element a {
   text-decoration: none;
   color: #222222;
-  
 }
-
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   #logo-img {
     width: 125px;
+  }
+  #hero {
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
   }
 
   #slider-container {
@@ -486,6 +522,7 @@ p.service {
     min-width: 100vw;
     align-items: center;
     justify-content: center;
+    padding-bottom: 30px;
   }
 
   #slider {
@@ -553,12 +590,29 @@ p.service {
     font-size: 1em;
   }
 
+  #testimonials-section {
+    padding: 50px 10px;
+  }
+
   .testimonial.title h1 {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 45px;
+    line-height: 45px;
     margin: 0px;
-    padding: 0px 0px 6px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .sub-title {
+    padding-left: 15px;
+  }
+
+  .firstname {
+    padding-left: 15px !important;
+  }
+
+  .lastname {
+    padding-left: 15px !important;
+    padding-bottom: 6px !important;
   }
 }
 
@@ -578,21 +632,13 @@ p.service {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 380px;
+    width: 500px;
     overflow: hidden;
   }
 
   .siema {
-    width: 400px;
+    width: 500px;
     min-width: 400px;
-  }
-
-  .firstname {
-    padding-left: 0px !important;
-  }
-  
-  .lastname {
-    padding-left: 15px !important;
   }
 
   .footer-row {
@@ -603,7 +649,6 @@ p.service {
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-  
 }
 
 /* Large and up */
@@ -612,13 +657,15 @@ p.service {
     max-width: 1400px;
   }
 
-
+  #slider {
+    height: 115px;
+  }
 
   .siemaDots {
     width: 100%;
     max-width: 1200px;
   }
-  
+
   .testimonial-container {
     width: 100%;
     max-width: 1200px;
@@ -627,19 +674,19 @@ p.service {
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .testimonial {
     color: #ffffff;
     font-family: "Roboto", sans-serif;
     padding: 0px 15px;
   }
-  
+
   .testimonial.title {
     text-align: right;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
     flex-direction: column;
   }
-  
+
   .testimonial.title h1 {
     font-weight: 700;
     font-size: 60px;
@@ -647,11 +694,11 @@ p.service {
     margin: 0px;
     padding: 0px 0px 6px 0px;
   }
-  
+
   .testimonial.paragraph {
     text-align: left;
   }
-  
+
   .testimonial-text {
     margin-bottom: 0px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
